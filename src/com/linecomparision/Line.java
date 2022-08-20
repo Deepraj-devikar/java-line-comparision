@@ -5,6 +5,7 @@ public class Line {
 	public double y1;
 	public double x2;
 	public double y2;
+	public double calculatedLength = 0;
 	
 	Line (double x1, double y1, double x2, double y2) {
 		this.x1 = x1;
@@ -14,8 +15,12 @@ public class Line {
 	}
 	
 	public double length () {
-		double diff_x = (this.x2 - this.x1);
-		double diff_y = (this.y2 - this.y1);
-		return Math.sqrt(Math.pow(diff_x, 2) + Math.pow(diff_y, 2));
+		if (this.calculatedLength != 0) {
+			return calculatedLength;
+		} else {
+			double diff_x = (this.x2 - this.x1);
+			double diff_y = (this.y2 - this.y1);
+			return Math.sqrt(Math.pow(diff_x, 2) + Math.pow(diff_y, 2));	
+		}
 	}
 }
