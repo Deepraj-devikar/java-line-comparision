@@ -16,11 +16,12 @@ public class Line {
 	
 	public double length () {
 		if (this.calculatedLength != 0) {
-			return calculatedLength;
+			return this.calculatedLength;
 		} else {
 			double diff_x = (this.x2 - this.x1);
 			double diff_y = (this.y2 - this.y1);
-			return Math.sqrt(Math.pow(diff_x, 2) + Math.pow(diff_y, 2));	
+			this.calculatedLength = Math.sqrt(Math.pow(diff_x, 2) + Math.pow(diff_y, 2));
+			return this.calculatedLength;
 		}
 	}
 }
